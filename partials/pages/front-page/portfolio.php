@@ -6,12 +6,13 @@ $portfolios = new WP_Query([
     'post__in' => get_field('portfolios')
 ]);
 
+$portfoliosUrl = get_field('portfolios_url');
 ?>
 
 <div class="space-y-6 bg-black mx-0 px-10 py-8 relative"  style="background-image: url(<?php echo CYN_THEME_DIR . '/assets/img/opacity-black-sections.png'?>);">
 
     <div class="flex flex-col gap-1">
-        <div class="text-neutral-800 text-xl max-md:text-2xl">
+        <div class="text-neutral-400 text-xl max-md:text-2xl">
             <?php _e('پروژه های ویژه', 'cyn-dm') ?>
         </div>
 
@@ -43,7 +44,7 @@ $portfolios = new WP_Query([
 
     <!-- Button -->
     <div class="group">
-        <a href="<?php get_post_type_archive_link('portfolio') ?>">
+        <a href="<?php echo get_field('portfolios_url') ?>">
             <div class="flex justify-end items-center max-md:justify-center">
                 <div>
                     <span>

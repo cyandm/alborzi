@@ -26,7 +26,7 @@ $portfolio = new WP_Query([
     <!-- Title -->
 
     <div class="text-5xl max-[767px]:text-3xl">
-        نمونه کارهای
+        <?php _e('نمونه کارهای', 'cyn-dm') ?>
         <?php the_title() ?>
     </div>
 

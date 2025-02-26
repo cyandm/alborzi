@@ -20,28 +20,30 @@
     </div>
 
     <!-- Menu -->
-
-    <div class="grid gap-2">
+    <div class="grid gap-2" id="mobileMenu">
         <?php foreach ($mobile_menu as $menu_item): ?>
-
-            <div class="group">
+            <div class="menu-item">
                 <a href="<?php echo $menu_item->url ?>"
-                    class="flex justify-start items-center gap-2 p-2 text-xl text-slate-400 hover:text-slate-950">
+                    class="menu-link flex justify-start items-center gap-2 p-2 text-xl text-slate-400 hover:text-slate-950">
                     <?php echo $menu_item->title ?>
-                    <?php echo $menu_item->child_items ? '<svg class="icon size-4 group-hover:-rotate-90"><use href="#icon-chevron-left" /></svg>' : '' ?>
+                    <?php if ($menu_item->child_items): ?>
+                        <svg class="menu-icon icon size-4 transition-transform duration-300 rotate-0">
+                            <use href="#icon-chevron-left" />
+                        </svg>
+                    <?php endif; ?>
                 </a>
 
                 <?php if ($menu_item->child_items): ?>
-                    <div class="grid transition-all grid-rows-[0fr] group-hover:grid-rows-[1fr] rounded-2xl bg-zinc-100">
-                        <div class="overflow-hidden grid gap-2 rounded-2xl divide-y-2 divide-slate-200">
+                    <div class="submenu overflow-hidden max-h-0 transition-all duration-300">
+                        <div class="submenu-content grid gap-2 rounded-2xl divide-y-2 divide-slate-200 bg-zinc-100">
                             <?php foreach ($menu_item->child_items as $child): ?>
-                                <a class="p-2 block text-zinc-500 px-3 py-4 "
-                                    href="<?php echo $child->url ?>"><?php echo $child->title ?></a>
+                                <a class="p-2 block text-zinc-500 px-3 py-4" href="<?php echo $child->url ?>">
+                                    <?php echo $child->title ?>
+                                </a>
                             <?php endforeach; ?>
                         </div>
                     </div>
                 <?php endif; ?>
-
             </div>
         <?php endforeach; ?>
     </div>

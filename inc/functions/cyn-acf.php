@@ -18,20 +18,28 @@ function cyn_register_acf_home_settings()
 		cyn_acf_add_tab('هیرو'),
 		cyn_acf_add_image('front_hero_bg', 'پس زمینه هیرو'),
 		cyn_acf_add_image('front_hero_bg_number', 'پس زمینه عدد هیرو'),
+
 		cyn_acf_add_tab('پاپ آپ ویدئو'),
 		cyn_acf_add_file('video_cover', 'کاور ویدئو'),
 		cyn_acf_add_file('video_teaser', 'ویدئو'),
-		cyn_acf_add_tab('درباره ما'),
-		cyn_acf_add_text('about_title', 'تایتل درباره ما'),
-		cyn_acf_add_text('about_text', 'متن درباره ما'),
-		cyn_acf_add_url('aboutـusـurl', 'لینک دکمه درباره ما'),
+
 		cyn_acf_add_tab('نمونه کار'),
 		cyn_acf_add_post_object('portfolios', 'انتخاب نمونه کارها', CYN_PORTFOLIO_POST_TYPE, '', 1),
+		cyn_acf_add_url('portfolios_url', 'لینک دکمه نمونه کارها'),
+
+		cyn_acf_add_tab('اعضای تیم'),
+		cyn_acf_add_wysiwyg('team_text', 'متن اعضای تیم'),
+		cyn_acf_add_url('teamـurl', 'لینک دکمه تیم ما'),
+
+		cyn_acf_add_tab('درباره ما'),
+		cyn_acf_add_text('about_title', 'تایتل درباره ما'),
+		cyn_acf_add_wysiwyg('about_text', 'متن درباره ما'),
+		cyn_acf_add_url('aboutـusـurl', 'لینک دکمه درباره ما'),
+
 		cyn_acf_add_tab('سوالات متداول'),
 		cyn_acf_add_image('faq_img', 'تصویر سوالات متداول'),
 		cyn_acf_add_post_object('faqs', 'انتخاب سوال متداول', CYN_FAQ_POST_TYPE, '', 1),
-		cyn_acf_add_tab('اعضای تیم'),
-		cyn_acf_add_text('team_text', 'متن اعضای تیم'),
+
 
 
 	];
@@ -93,8 +101,10 @@ function cyn_register_acf_portfolio_settings()
 
 		cyn_acf_add_tab('مکان'),
 		cyn_acf_add_text('portfolio_location', 'مکان پروڑه', 0, 50),
+		
 		cyn_acf_add_tab('شماره'),
 		cyn_acf_add_text('portfolio_number', 'شماره پروڑه', 0, 50),
+		
 		cyn_acf_add_tab('تاریخ'),
 		cyn_acf_add_text('portfolio_year', 'سال پروڑه', 0, 50),
 

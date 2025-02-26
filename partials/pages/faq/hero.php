@@ -1,5 +1,4 @@
-<section class="grid grid-cols-5 items-center bg-no-repeat"
-    style="background-image: url('<?php echo get_the_post_thumbnail_url() ?>');">
+<section class="grid grid-cols-5 items-center bg-no-repeat">
     <!-- Content -->
     <div class="col-span-2 grid gap-3 max-[767px]:col-span-5">
         <div class="text-5xl max-[767px]:text-3xl text-zinc-900">

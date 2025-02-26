@@ -10,11 +10,13 @@
         </div>
 
         <!-- language button -->
-        <div class="border bottom-1 rounded-full border-slate-100 p-3 ">
+        <!-- <div class="border bottom-1 rounded-full border-slate-100 p-3 ">
             <svg class="icon">
                 <use href="#icon-Earth,-Home,-World-4" />
             </svg>
-        </div>
+        </div> -->
+
+        <?php cyn_get_component('lang-switcher')?>
     </div>
 
     <!-- search -->
@@ -31,7 +33,7 @@
 
                 <input type="search" id="search" value="<?php the_search_query()?>"
                     class="block rounded-full w-full py-3 pl-4 pr-9 text-base placeholder:text-zinc-600 text-zinc-600 bg-zinc-100 border border-slate-200"
-                    placeholder="جستجو کن" name="s" required />
+                    placeholder="<?php _e('جستجو کن', 'cyn-dm') ?> " name="s" required />
             </div>
         </form>
     </div>

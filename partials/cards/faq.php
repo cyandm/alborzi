@@ -1,4 +1,4 @@
-<div class="group flex flex-row justify-between items-center border-b gap-16 py-9 px-6 cursor-pointer">
+<div class="faq-item flex flex-row justify-between items-center border-b gap-16 py-9 px-6 cursor-pointer">
 
     <div class="flex flex-col gap-2">
         <!-- Question -->
@@ -7,15 +7,14 @@
         </div>
 
         <!-- Answer -->
-        <div
-            class="max-h-0 overflow-hidden text-sm min-[768px]:text-lg opacity-0 group-hover:max-h-96 group-hover:opacity-100 text-zinc-500 leading-8 transition-all duration-500">
+        <div class="faq-answer max-h-0 overflow-hidden text-sm min-[768px]:text-lg text-zinc-500 leading-8 transition-all duration-500">
             <?php the_content(); ?>
         </div>
     </div>
 
     <!-- Icon -->
-    <div class="rotate-90 group-hover:rotate-0 transition-all duration-300">
-        <a href="<?php the_permalink(); ?>">
+    <div class="faq-icon rotate-90 transition-all duration-300">
+        <a>
             <svg class="icon w-6 h-6 min-[768px]:w-12 min-[768px]:h-12">
                 <use href="#icon-Arrow-17" />
             </svg>

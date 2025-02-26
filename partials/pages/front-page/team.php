@@ -15,6 +15,8 @@ if ($about_us_page) {
     $about_page_id = null;
 }
 
+$teamUrl = get_field('teamـurl');
+
 $teamText = get_field('team_text');
 ?>
 
@@ -28,9 +30,12 @@ $teamText = get_field('team_text');
                 <use href="#icon-Quote" />
             </svg>
         </span>
+
         <span>
-            ما نتایج <span class="text-teal-600">استثنائی تحویل</span> می دهیم!
+            <?php _e('ما نتایج', 'cyn-dm') ?> <span class="text-teal-600"><?php _e('استثنائی تحویل', 'cyn-dm') ?></span>
+            <?php _e('می دهیم!', 'cyn-dm') ?>
         </span>
+
     </div>
 
     <!-- Images -->
@@ -93,27 +98,29 @@ $teamText = get_field('team_text');
                 </svg>
             </span>
             <span>
-                ما نتایج <span class="text-teal-600">استثنائی تحویل</span> می دهیم!
+                <?php _e('ما نتایج', 'cyn-dm') ?> <span
+                    class="text-teal-600"><?php _e('استثنائی تحویل', 'cyn-dm') ?></span>
+                <?php _e('می دهیم!', 'cyn-dm') ?>
             </span>
         </div>
 
         <!-- Text -->
-        <div class="text-zinc-800 text-sm lg:text-base leading-[34px]">
+        <div class="text-zinc-800 text-base lg:text-lg leading-[34px]">
             <?php echo $teamText; ?>
         </div>
 
         <!-- Button -->
         <div>
-            <a href="<?php echo esc_url($about_page_url); ?>">
+            <a href="<?php echo esc_url($teamUrl); ?>">
                 <div class="flex justify-end items-center max-md:justify-center">
                     <div>
                         <span>
-                            <svg class="icon max-md:text-teal-600 text-black rotate-45 object size-8">
+                            <svg class="icon text-teal-600 rotate-45 object size-8">
                                 <use href="#icon-Arrow-17" />
                             </svg>
                         </span>
                     </div>
-                    <div class="text-xs text-black max-md:text-teal-600">
+                    <div class="text-base text-teal-600">
                         <?php _e('مطالعه بیشتر', 'cyn-dm'); ?>
                     </div>
                 </div>

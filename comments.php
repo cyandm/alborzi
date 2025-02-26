@@ -140,6 +140,6 @@
     </div>
 <?php else: ?>
     <div class="comment-list">
-        <p class="fs-h2 text-secondary-400">کامنتی ثبت نشده است</p>
+        <p class="fs-h2 text-secondary-400"><?php _e('کامنتی ثبت نشده است', 'cyn-dm') ?></p>
     </div>
 <?php endif; ?>

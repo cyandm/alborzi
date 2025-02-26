@@ -117,3 +117,25 @@
 		@apply text-lg text-zinc-900 border border-neutral-600 rounded-[32px] py-2 px-7 flex flex-row justify-center items-center gap-1;
 	}
 }
+
+
+@layer components {
+	.lang-switcher {
+		@apply relative capitalize;
+	  }
+	  
+	  .lang-switcher__current,
+	  .lang-switcher__item {
+		@apply flex items-center justify-center gap-2 p-2 cursor-pointer;
+	  }
+	  
+	  .lang-switcher__list {
+		@apply absolute left-0 bg-[var(--clr-bg-500)] border border-[var(--clr-natural-300)] opacity-0 pointer-events-none translate-y-3 transition duration-300;
+	  }
+	  
+	  .lang-switcher:hover .lang-switcher__list {
+		@apply opacity-100 pointer-events-auto translate-y-0;
+	  }
+}
+
+

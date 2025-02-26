@@ -30,7 +30,7 @@
                             <?php echo wp_get_attachment_image($roadMapImage, 'full', false, ['class' => 'max-w-full h-auto']) ?>
                         </div>
                         <!-- Content -->
-                        <div class="flex flex-col gap-2 w-full md:w-[510px]">
+                        <div class="flex flex-col bg-white gap-2 w-full md:w-[510px]">
                             <!-- Title -->
                             <div class="text-2xl md:text-3xl text-neutral-700">
                                 <?php echo $roadMapTitle ?>

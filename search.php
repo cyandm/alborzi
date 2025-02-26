@@ -21,7 +21,7 @@ $search_type = empty($_GET['search-type']) ? 'all' : $_GET['search-type'];
                 <div class="flex flex-row max-[700px]:flex-col max-[700px]:items-start justify-start items-center gap-2">
 
                     <div class="text-neutral-700">
-                        جستجو در :
+                        <?php _e('جستجو در :', 'cyn-dm') ?> 
                     </div>
 
                     <div class="flex">
@@ -35,19 +35,19 @@ $search_type = empty($_GET['search-type']) ? 'all' : $_GET['search-type'];
                             <div class="flex justify-center items-center gap-2">
                                 <input class="border-slate-200 size-6 text-teal-600 focus:bg-teal-600 focus:ring-neutral-500 dark:focus:ring-teal-600 dark:ring-teal-600 dark:focus:ring-offset-white focus:ring-1 dark:bg-white dark:border-gray-500 " value="service" type="radio" name="search-type" id="search-service"
                                     <?php echo $search_type === 'service' ? 'checked' : '' ?>>
-                                <label class="text-neutral-700" for="service">بلاگ ها</label>
+                                <label class="text-neutral-700" for="service"><?php _e('بلاگ ها', 'cyn-dm') ?></label>
                             </div>
 
                             <div class="flex justify-center items-center gap-2">
                                 <input class="border-slate-200 size-6 text-teal-600 focus:bg-teal-600 focus:ring-neutral-500 dark:focus:ring-teal-600 dark:ring-teal-600 dark:focus:ring-offset-white focus:ring-1 dark:bg-white dark:border-gray-500 custom filter blog_input" value="post" type="radio" name="search-type"
                                     id="search-blog" <?php echo $search_type === 'post' ? 'checked' : '' ?>>
-                                <label class="text-neutral-700" for="blog">خدمات</label>
+                                <label class="text-neutral-700" for="blog"><?php _e('خدمات', 'cyn-dm') ?></label>
                             </div>
 
                             <div class="flex justify-center items-center gap-2">
                                 <input class="border-slate-200 size-6 text-teal-600 focus:bg-teal-600 focus:ring-neutral-500 dark:focus:ring-teal-600 dark:ring-teal-600 dark:focus:ring-offset-white focus:ring-1 dark:bg-white dark:border-gray-500 custom filter blog_input" value="doctor" type="radio" name="search-type"
                                     id="search-doctor" <?php echo $search_type === 'doctor' ? 'checked' : '' ?>>
-                                <label class="text-neutral-700" for="doctor">نمونه کارها</label>
+                                <label class="text-neutral-700" for="doctor"><?php _e('نمونه کارها', 'cyn-dm') ?></label>
                             </div>
 
                         </div>
@@ -66,7 +66,7 @@ $search_type = empty($_GET['search-type']) ? 'all' : $_GET['search-type'];
 
                     <div>
                         <input type="text" id="search" name="s" value="<?php the_search_query() ?>"
-                            class="text-right text-sm block w-full border-0 focus:ring-0" placeholder="جست و جو">
+                            class="text-right text-sm block w-full border-0 focus:ring-0" placeholder="<?php _e('جست و جو', 'cyn-dm') ?>">
                     </div>
                 </div>
             </div>

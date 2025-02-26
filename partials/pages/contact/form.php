@@ -10,21 +10,21 @@
         <div class="grid grid-cols-2 max-lg:col-span-3 gap-3">
             <div class="col-span-1 max-lg:col-span-2">
                 <label class="form-group order-1">
-                    <input placeholder="نام و نام خانوادگی" type="text"
+                    <input placeholder="<?php _e('نام و نام خانوادگی', 'cyn-dm') ?>" type="text"
                         class="form-control w-full text-base text-zinc-400 rounded-[40px] border border-slate-200 bg-zinc-100 p-4 focus-visible:border-zinc-500 focus:text-zinc-600 transition-all duration-300 focus:ring-0"
                         name="author">
                 </label>
             </div>
 
             <div class="form-group col-span-1 max-lg:col-span-2">
-                <input placeholder="شماره تماس" maxlength="11" type="text"
+                <input placeholder="<?php _e('شماره تماس', 'cyn-dm') ?>" maxlength="11" type="text"
                     class="form-control w-full text-base text-zinc-400 rounded-[40px] border border-slate-200 bg-zinc-100 p-4 focus-visible:border-zinc-500 focus:text-zinc-600 transition-all duration-300 focus:ring-0"
                     name="tel">
             </div>
         </div>
 
         <div>
-            <textarea placeholder="متن پیام"
+            <textarea placeholder="<?php _e('متن پیام', 'cyn-dm') ?>"
                 class="form-control resize-none w-full h-[154px] text-base text-zinc-400 rounded-[40px] border border-slate-200 bg-zinc-100 p-4 focus-visible:border-zinc-500 focus:text-zinc-600 transition-all duration-300 focus:ring-0"
                 name="comment"></textarea>
         </div>

@@ -34,7 +34,7 @@ $publishedPosts = new WP_Query([
                         </div>
                         <input type="search" id="search" value="<?php the_search_query()?>"
                             class="block rounded-full w-full py-3 pl-4 pr-9 text-base placeholder:text-zinc-600 text-zinc-600 bg-zinc-100 border border-slate-200"
-                            placeholder="جستجو کن" name="s" required />
+                            placeholder="<?php _e('جستجو کن', 'cyn-dm') ?>" name="s" required />
                     </div>
                 </form>
             </div>
@@ -58,7 +58,7 @@ $publishedPosts = new WP_Query([
                                         <li class="flex justify-between py-1 text-body_s">
                                             <?php echo $term->name ?>
                                             <span class="text-primary-50">
-                                                <?php echo $term->count . 'مقاله'; ?>
+                                                <?php echo $term->count . ' ' . _e('مقاله', 'cyn-dm'); ?>
                                             </span>
                                         </li>
                                     </a>

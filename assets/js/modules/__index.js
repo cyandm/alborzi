@@ -8,3 +8,4 @@ import './gsap';
 import './price-popUp';
 import './comment';
 import './toastify';
+import './faq';

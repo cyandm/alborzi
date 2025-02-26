@@ -28,9 +28,8 @@ $aboutBtnUrl = get_field('aboutـusـurl');
 
     <!-- Button -->
     <div>
-        <a href="<?php echo esc_url($aboutBtnUrl); ?>" class="max-md:text-teal-600">
+        <a href="<?php echo esc_url($aboutBtnUrl); ?>" class="text-teal-600">
             <div class="flex justify-end items-center max-md:justify-center">
-
                 <div>
                     <span>
                         <svg class="icon rotate-45 object size-8">
@@ -39,7 +38,7 @@ $aboutBtnUrl = get_field('aboutـusـurl');
                     </span>
                 </div>
 
-                <div class="text-xs text-black max-md:text-teal-600">
+                <div class="text-base text-teal-600">
                     <?php _e('درباره ما', 'cyn-dm') ?>
                 </div>
             </div>

@@ -98,7 +98,7 @@
 
     <!-- Cyan Name -->
     <div class="text-xs text-zinc-400 text-center py-4">
-        طراحی و توسعه توسط شرکت سایان
+        <?php _e('طراحی و توسعه توسط شرکت سایان', 'cyn-dm') ?>
     </div>
 
 </div>

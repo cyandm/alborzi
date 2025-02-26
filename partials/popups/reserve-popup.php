@@ -28,18 +28,18 @@ $services = get_posts([
             <div class="space-y-5">
                 <div class="grid grid-cols-4 gap-5">
                     <div class="col-span-4 md:col-span-2">
-                        <input name="name" type="text" required="required" placeholder="نام شما"
+                        <input name="name" type="text" required="required" placeholder="<?php _e('نام شما', 'cyn-dm') ?>"
                             class="px-4 py-3 rounded-[40px] bg-zinc-100 w-full border border-slate-200">
                     </div>
                     <div class="col-span-4 md:col-span-2">
-                        <input name="last_name" type="text" required="required" placeholder="نام خانوادگی شما"
+                        <input name="last_name" type="text" required="required" placeholder="<?php _e('نام خانوادگی شما', 'cyn-dm') ?>"
                             class="px-4 py-3 rounded-[40px] bg-zinc-100 w-full border border-slate-200">
                     </div>
                 </div>
                 <div class="grid grid-cols-4 gap-5">
                     <div class="col-span-4 md:col-span-2">
                         <input maxlength="11" type="text" required="required" id="phone_number"
-                            aria-describedby="helper-text-explanation" placeholder="شماره تماس"
+                            aria-describedby="helper-text-explanation" placeholder="<?php _e('شماره تماس', 'cyn-dm') ?>"
                             class="px-4 py-3 rounded-[40px] bg-zinc-100 w-full border border-slate-200"
                             name="phone_number">
                     </div>
@@ -57,7 +57,7 @@ $services = get_posts([
                 </div>
 
                 <div>
-                    <textarea name="message" placeholder="متن پیام"
+                    <textarea name="message" placeholder="<?php _e('متن پیام', 'cyn-dm') ?>"
                         class="px-4 py-3 h-[154px] bg-zinc-100 border w-full border-slate-200 rounded-[40px]"></textarea>
                 </div>
 
