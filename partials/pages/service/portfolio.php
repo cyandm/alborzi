@@ -35,7 +35,7 @@ $portfolio = new WP_Query([
     <!-- Swiper -->
     <?php if ($portfolio->have_posts()): ?>
 
-        <swiper-container space-between="12" slides-per-view="auto">
+        <swiper-container class="h-[395px]" space-between="12" slides-per-view="auto" pagination="true" pagination-clickable="true">
 
             <?php while ($portfolio->have_posts()): ?>
 

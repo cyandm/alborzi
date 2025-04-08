@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <div id="customCursor"
-    class="hidden fixed w-20 h-20 bg-cover bg-center rounded-full pointer-events-none z-50 transform transition-transform duration-100">
+    class="max-md:hidden scale-0 fixed w-20 h-20 bg-cover bg-center rounded-full pointer-events-none z-50 transform transition-transform duration-500">
 </div>
 
 <section class="container">
@@ -9,7 +9,14 @@
     <!-- Title -->
     <section class="text-5xl">
 
-        <?php echo get_post_type_object(CYN_SERVICE_POST_TYPE)->labels->singular_name ?>
+        <?php 
+        // Check if the current language is English
+        if (get_locale() === 'en_US') {
+            _e('Services', 'cyn-dm'); 
+        } else {
+            echo get_post_type_object(CYN_SERVICE_POST_TYPE)->labels->singular_name;
+        }
+        ?>
 
     </section>
 

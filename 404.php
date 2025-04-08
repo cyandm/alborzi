@@ -23,7 +23,7 @@
         <div class="py-2"></div>
 
         <!-- button  -->
-        <button href="<?php echo esc_url(home_url()); ?>"
+        <a href="<?php echo get_option('404_link') ?>"
             class="flex items-center justify-center text-sm text-zinc-600">
             <span>
                 <svg class="icon text-sm text-zinc-600 rotate-45 object size-8">
@@ -31,7 +31,7 @@
                 </svg>
             </span>
             <?php _e('بازگشت به صفحه اصلی', 'cyn-dm') ?>
-        </button>
+        </a>
     </div>
 
 </main>

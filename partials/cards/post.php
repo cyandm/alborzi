@@ -20,7 +20,8 @@ $post_views = get_post_views(get_the_ID());
         <!-- Date & Category -->
         <div class="flex flex-row justify-start items-center gap-5">
             <!-- Date -->
-            <div class="text-xs md:text-sm text-neutral-400 flex flex-row items-baseline justify-center gap-2 whitespace-nowrap">
+            <div
+                class="text-xs md:text-sm text-neutral-400 flex flex-row items-baseline justify-center gap-2 whitespace-nowrap">
                 <div
                     class=" bg-teal-600 relative after:absolute after:rounded-full isolate after:-z-10 after:animate-pulse after:bg-teal-50 after:content-[''] after:inset-0 shadow-xl rounded-full size-3 flex justify-center items-center">
                 </div>
@@ -62,7 +63,7 @@ $post_views = get_post_views(get_the_ID());
             <div>
                 <a href="<?php echo get_the_permalink() ?>">
                     <div class="flex flex-row gap-2 items-center whitespace-nowrap">
-                        
+
                         <div class="border border-slate-200 rounded-full p-1">
                             <svg class="icon rotate-45 object">
                                 <use href="#icon-Arrow-17" />
@@ -84,8 +85,15 @@ $post_views = get_post_views(get_the_ID());
                     </svg>
                 </span>
 
-                <span>
-                    <?php echo $post_views; ?>
+                <span class="flex flex-row gap-1">
+                    <div>
+
+                        <?php echo $post_views ?>
+                    </div>
+
+                    <div>
+                        <?php _e('بازدید', 'cyn-dm'); ?>
+                    </div>
                 </span>
             </div>
         </div>

@@ -5,7 +5,14 @@
     <!-- Title -->
     <section class="text-5xl">
 
-        <?php echo get_post_type_object(CYN_PORTFOLIO_POST_TYPE)->labels->singular_name ?>
+        <?php 
+        // Check if the site language is English
+        if (get_locale() === 'en_US') {
+            _e('FAQ', 'cyn-dm'); 
+        } else {
+            echo get_post_type_object(CYN_FAQ_POST_TYPE)->labels->singular_name;
+        }
+        ?>
 
     </section>
 

@@ -1,13 +1,13 @@
 <?php $desktop_menu = cyn_get_menu_items_by_slug(CYN_DESKTOP_MENU); ?>
 
 
-<div class="col-span-1 grid grid-rows-2 w-full">
+<div class="col-span-1 grid grid-rows-2 w-full px-10">
 
     <!-- Links -->
     <div class="space-y-7 pr-24">
         <!--Title -->
         <div class=" text-3xl text-neutral-950">
-            <?php echo get_option('up_section_title') ?>
+            <?php _e('لینک های مفید', 'cyn-dm') ?>
         </div>
 
         <!-- Options -->
@@ -17,17 +17,16 @@
             <div>
                 <a id="menuItem1" class="hover:text-slate-950 transition-all duration-500"
                     href="<?php echo get_option("price_title_link", '#') ?>">
-                    <?php echo get_option("price_title") ?>
+                    <?php _e('استعلام هزینه', 'cyn-dm') ?>
                 </a>
             </div>
 
-
-            <?php for ($i = 1; $i <= 2; $i++): ?>
-                <a class="hover:text-slate-950 transition-all duration-500"
-                    href="<?php echo get_option("title_link_$i", '#') ?>">
-                    <?php echo get_option("title_$i") ?>
+            <div>
+                <a class="whitespace-nowrap max-lg:text-sm hover:before:content-[''] hover:before:w-3 hover:before:h-1 hover:before:rounded-full hover:before:bg-teal-600 hover:text-teal-600 flex gap-3 items-center text-lg transition-all duration-300"
+                    href="<?php echo pll_current_language() === 'fa' ? get_option("title_persian_link", '#') : get_option("title_english_link", '#'); ?>">
+                    <?php _e('سوالات متداول', 'cyn-dm') ?>
                 </a>
-            <?php endfor ?>
+            </div>
         </div>
     </div>
 
@@ -35,7 +34,7 @@
     <div class="space-y-7 pt-14 pr-24 border-t border-slate-200">
         <!-- Title -->
         <div class="text-3xl text-neutral-950">
-            <?php echo get_option('down_section_title') ?>
+            <?php _e('ارتباط با ما', 'cyn-dm') ?>
         </div>
 
         <div class="grid gap-8 text-zinc-400">

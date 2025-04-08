@@ -8,7 +8,7 @@
 
     <?php cyn_get_page('front-page/mobile-hero') ?>
 
-    <div class="py-6 md:py-12"></div>
+    <div class="py-6"></div>
 
     <?php cyn_get_page('front-page/service') ?>
 

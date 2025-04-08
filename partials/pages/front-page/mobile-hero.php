@@ -6,13 +6,13 @@ $heroNumberBg = get_field('front_hero_bg_number');
 
 ?>
 
-<div class="container hidden max-[767px]:grid justify-items-center bg-no-repeat bg-contain"
+<div class="hidden max-[767px]:grid justify-items-center bg-no-repeat bg-contain"
     style="background-image: url('<?php echo wp_get_attachment_image_url($heroBg, 'full', false) ?>');">
 
     <!-- Ttle -->
     <div class="flex flex-row items-center">
 
-        <div class="text-[42px] font-bold text-neutral-400 relative">
+        <div class="text-[42px] font-bold text-neutral-400 relative ps-[5px]">
             <span class="text-black ">
                 <?php _e('ما', 'cyn-dm') ?>
             </span>

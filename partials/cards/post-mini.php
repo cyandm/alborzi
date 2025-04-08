@@ -57,7 +57,8 @@ $post_views = get_post_views(get_the_ID());
         <div class="group flex flex-row justify-between items-center">
 
             <!-- Btn -->
-            <div class="border border-slate-200 rounded-full p-1  bg-white group-hover:bg-teal-600 transition-all duration-300">
+            <div
+                class="border border-slate-200 rounded-full p-1  bg-white group-hover:bg-teal-600 transition-all duration-300">
                 <a href="<?php echo get_the_permalink() ?>">
                     <span>
                         <svg class="icon rotate-45 object group-hover:text-white transition-all duration-300">
@@ -75,8 +76,14 @@ $post_views = get_post_views(get_the_ID());
                     </svg>
                 </span>
 
-                <span>
-                    <?php echo $post_views; ?>
+                <span class="flex flex-row gap-1">
+                    <div>
+                        <?php echo $post_views ?>
+                    </div>
+
+                    <div>
+                        <?php _e('بازدید', 'cyn-dm'); ?>
+                    </div>
                 </span>
             </div>
         </div>
@@ -86,7 +93,7 @@ $post_views = get_post_views(get_the_ID());
     <!-- Image -->
     <div class="col-span-1 h-[112px]">
         <a href="<?php echo get_permalink() ?>">
-            <?php echo get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'rounded-xl aspect-square object-cover w-[118px]']) ?>
+            <?php echo get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'rounded-xl aspect-square object-cover w-[118px] h-[100%]']) ?>
         </a>
     </div>
 </div>

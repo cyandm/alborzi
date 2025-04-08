@@ -78,8 +78,8 @@ function cyn_register_acf_service_settings()
 	array_push($fields, cyn_acf_add_text('main_title', 'تیتر اصلی'));
 
 	for ($i = 1; $i <= 3; $i++) {
-		array_push($fields, cyn_acf_add_text("step_title_$i", "تیتر $i"));
-		array_push($fields, cyn_acf_add_text("step_text_$i", "متن $i"));
+		array_push($fields, cyn_acf_add_text("step_title_$i", "تیتر $i", 0, 30));
+		array_push($fields, cyn_acf_add_wysiwyg("step_text_$i", "متن $i", 40));
 		array_push($fields, cyn_acf_add_image("step_image_$i", "تصویر $i"));
 	}
 
@@ -115,7 +115,7 @@ function cyn_register_acf_portfolio_settings()
 	for ($i = 1; $i <= 3; $i++) {
 		array_push($fields, cyn_acf_add_image("road_img_$i", "تصویر $i"));
 		array_push($fields, cyn_acf_add_text("road_title_$i", "سربرگ $i", 0, 30));
-		array_push($fields, cyn_acf_add_text("road_text_$i", "متن $i", 0, 30));
+		array_push($fields, cyn_acf_add_wysiwyg("road_text_$i", "متن $i", 40));
 	}
 
 	array_push($fields, cyn_acf_add_tab('تصاویر پروژه'));
@@ -142,7 +142,7 @@ function cyn_register_acf_about_settings()
 
 		cyn_acf_add_tab('هیرو'),
 		cyn_acf_add_text('hero_title', 'سربرگ هیرو'),
-		cyn_acf_add_text('hero_txt', 'متن هیرو'),
+		cyn_acf_add_wysiwyg('hero_txt', 'متن هیرو'),
 
 	];
 

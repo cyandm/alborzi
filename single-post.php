@@ -77,8 +77,14 @@ $post_views = get_post_views(get_the_ID());
                             </svg>
                         </span>
 
-                        <span>
-                            <?php echo $post_views; ?>
+                        <span class="flex flex-row gap-1">
+                            <div>
+                                <?php echo $post_views ?>
+                            </div>
+
+                            <div>
+                                <?php _e('بازدید', 'cyn-dm'); ?>
+                            </div>
                         </span>
                     </div>
                 </div>

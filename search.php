@@ -29,7 +29,7 @@ $search_type = empty($_GET['search-type']) ? 'all' : $_GET['search-type'];
                         <div class="p-2 flex-wrap flex gap-6">
                             <div class="flex justify-center items-center gap-2">
                                 <input class="border-slate-200 size-6 text-teal-600 focus:bg-teal-600 focus:ring-neutral-500 dark:focus:ring-teal-600 dark:ring-teal-600 dark:focus:ring-offset-white focus:ring-1 dark:bg-white dark:border-gray-500 " value="all" type="radio" name="search-type" id="search-all" <?php echo $search_type === 'all' ? 'checked' : '' ?>>
-                                <label class="text-neutral-700" for="search-all">همه</label>
+                                <label class="text-neutral-700" for="search-all"><?php _e('همه', 'cyn-dm') ?></label>
                             </div>
 
                             <div class="flex justify-center items-center gap-2">

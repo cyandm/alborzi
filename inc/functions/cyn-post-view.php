@@ -20,9 +20,9 @@ function get_post_views($postID)
     if ($count == '') {
         delete_post_meta($postID, $count_key);
         add_post_meta($postID, $count_key, '0');
-        return '0 View';
+        return '0';
     }
-    return $count . ' بازدید';
+    return $count;
 }
 
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);

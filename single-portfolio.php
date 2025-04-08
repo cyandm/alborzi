@@ -27,7 +27,7 @@
                         class="roadmap-item flex flex-col md:flex-row justify-around items-center gap-4 transition-opacity duration-600 transform md:even:flex-row-reverse <?php echo ($i % 2 == 0) ? 'md:flex-row-reverse' : ''; ?> opacity-0 translate-y-4">
                         <!-- Image -->
                         <div class="flex-shrink-0 mb-4 md:mb-0">
-                            <?php echo wp_get_attachment_image($roadMapImage, 'full', false, ['class' => 'max-w-full h-auto']) ?>
+                            <?php echo wp_get_attachment_image($roadMapImage, 'full', false, ['class' => 'max-w-[364px] h-auto max-md:w-[224px] object-cover']) ?>
                         </div>
                         <!-- Content -->
                         <div class="flex flex-col bg-white gap-2 w-full md:w-[510px]">
@@ -49,13 +49,13 @@
     <div class="py-10"></div>
 
     <!-- Project Images -->
-    <div class="team-section bg-black mx-0 px-10 py-8 ">
+    <div class="team-section bg-black mx-0 px-4 md:px-10 py-8 ">
 
         <div class="text-white text-4xl max-md:text-2xl py-8">
             <?php _e('تصاویر  محل پروژه', 'cyn-dm') ?>
         </div>
 
-        <swiper-container space-between="12" slides-per-view="auto">
+        <swiper-container class="h-[400px]" space-between="12" slides-per-view="auto" pagination="true" pagination-clickable="true">
 
             <?php for ($i = 1; $i <= 8; $i++): ?>
 

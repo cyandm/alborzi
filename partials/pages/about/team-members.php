@@ -3,7 +3,7 @@
         <?php _e('اعضای تیم بعد پنج', 'cyn-dm') ?>
     </div>
 
-    <swiper-container space-between="12" slides-per-view="auto">
+    <swiper-container class="h-[395px]" space-between="12" slides-per-view="auto" pagination="true" pagination-clickable="true">
         <?php for ($i = 1; $i < 10; $i++): ?>
 
             <?php

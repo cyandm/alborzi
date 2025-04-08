@@ -11,6 +11,8 @@
 
 <?php endif; ?>
 
+<?php cyn_get_component('preloader')?>
+
 <div class="wp-scripts">
 	<?php wp_footer() ?>
 </div>

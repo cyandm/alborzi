@@ -17,24 +17,30 @@ $publishedPosts = new WP_Query([
     'fields' => 'ids'
 ])
 
-?>
+    ?>
 
 <section class="col-span-1 max-xl:col-span-4 max-xl:order-1">
     <div class="h-full">
         <div class="grid sticky top-3 space-y-3">
-            
             <!-- Search -->
             <div class="max-xl:hidden flex items-center flex-grow cursor-pointer">
-                <form class="w-full max-lg:mx-4" action="/" method="GET">
+                <form class="w-full max-lg:mx-4" action="<?php echo pll_current_language() === 'fa' ? '/' : '/en' ?>"
+                    method="GET">
+
                     <div class="relative flex items-center">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3">
-                            <svg class="icon text-zinc-600">
-                                <use href="#icon-Search,-Loupe" />
-                            </svg>
-                        </div>
-                        <input type="search" id="search" value="<?php the_search_query()?>"
-                            class="block rounded-full w-full py-3 pl-4 pr-9 text-base placeholder:text-zinc-600 text-zinc-600 bg-zinc-100 border border-slate-200"
-                            placeholder="<?php _e('جستجو کن', 'cyn-dm') ?>" name="s" required />
+                        <a
+                            href="/<?php echo pll_current_language() === 'fa' ? '?search-type=all&s=' : 'en/?search-type=all&s='; ?>">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3">
+                                <svg class="icon text-zinc-600">
+                                    <use href="#icon-Search,-Loupe" />
+                                </svg>
+                            </div>
+                        </a>
+
+                        <input type="search" id="search" value="<?php the_search_query(); ?>"
+                            class="block rounded-full w-full py-3 ps-9 pe-4 text-base placeholder:text-zinc-600 text-zinc-600 bg-zinc-100 border border-slate-200"
+                            placeholder="<?php _e('جستجو کن', 'cyn-dm'); ?>" name="s" required />
+
                     </div>
                 </form>
             </div>
@@ -57,8 +63,13 @@ $publishedPosts = new WP_Query([
 
                                         <li class="flex justify-between py-1 text-body_s">
                                             <?php echo $term->name ?>
-                                            <span class="text-primary-50">
-                                                <?php echo $term->count . ' ' . _e('مقاله', 'cyn-dm'); ?>
+                                            <span class="text-primary-90 flex flex-row gap-1">
+                                                <div>
+                                                    <?php echo $term->count ?>
+                                                </div>
+                                                <div>
+                                                    <?php _e('مقاله', 'cyn-dm'); ?>
+                                                </div>
                                             </span>
                                         </li>
                                     </a>

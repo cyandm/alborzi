@@ -8,13 +8,13 @@ $services = get_posts([
 ?>
 
 <div id="pricePopup" class="price-cover fixed inset-0 hidden bg-black bg-opacity-75 flex justify-center items-center z-50 transition-opacity duration-300 opacity-0">
-    <form action="/" method="post" id="pricePopupForm">
+    <form action="/" method="post" id="pricePopupForm" class="w-[550px]">
         <div class="relative flex flex-col gap-6 px-10 py-7 bg-white rounded-[40px] overflow-hidden transform transition-all duration-300 scale-95 max-md:w-full"
             id="popupContent">
 
             <div class="flex flex-row justify-between gap-4">
                 <div class="text-black text-2xl md:text-4xl">
-                    <?php echo get_option('cyn_form_title') ?>
+                    <?php _e('استعلام هزینه', 'cyn-dm') ?>
                 </div>
                 <div class="flex items-center cursor-pointer" id="popUpCloser">
                     <div class="border bottom-1 rounded-full border-slate-100 p-3">

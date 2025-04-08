@@ -9,14 +9,14 @@
     <?php wp_head() ?>
 </head>
 
-<body <?php body_class('relative') ?>>
-    
+<body <?php body_class('relative overflow-x-hidden') ?>> 
+
     <?php cyn_get_popup('reserve-popup'); ?>
 
     <?php wp_body_open() ?>
 
     <div id="customCursor"
-        class="hidden fixed -translate-x-[50%] -translate-y-[50%] size-40 bg-cover bg-center rounded-full pointer-events-none z-50 transform transition-transform duration-100">
+        class="max-md:hidden scale-0 fixed -translate-x-[50%] -translate-y-[50%] size-40 bg-cover bg-center rounded-full pointer-events-none z-50 transform transition-transform duration-500">
     </div>
 
 

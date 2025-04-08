@@ -48,7 +48,7 @@
         <section class="flex flex-row max-[767px]:block max-[767px]:divide-y border-y gap-3 p-5 text-zinc-400">
 
             <!-- Column 1-->
-            <div class="justify-center py-4 px-3 flex flex-col gap-3 min-[768px]:border-l">
+            <div class="justify-center py-4 px-3 flex flex-col gap-3 min-[768px]:border-e">
                 <div class="text-lg max-lg:text-sm">
                     <?php echo get_option('footer_title_email') ?>
                 </div>
@@ -66,7 +66,7 @@
             </div>
 
             <!-- Column 2-->
-            <div class="justify-center py-4 px-3 flex flex-col gap-3 min-[768px]:border-l">
+            <div class="justify-center py-4 px-3 flex flex-col gap-3 min-[768px]:border-e">
                 <div class="text-lg max-lg:text-sm">
                     <?php echo get_option('footer_title_phone') ?>
                 </div>

@@ -1,4 +1,4 @@
-<div class="faq-item flex flex-row justify-between items-center border-b gap-16 py-9 px-6 cursor-pointer">
+<div class="faq-item flex flex-row justify-between items-center border-b gap-16 py-5 px-4 md:py-9 md:px-6 cursor-pointer">
 
     <div class="flex flex-col gap-2">
         <!-- Question -->

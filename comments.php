@@ -5,28 +5,28 @@
         <?php comment_form([
             'fields' => [
                 'author' => '<label class="form-group relative order-1">
-                                        <input placeholder="نام شما" type="text" class="form-control w-full text-base rounded-2xl border border-slate-200 text-slate-400 p-4 focus-visible:border-teal-400 focus:text-zinc-600 transition-all duration-300 focus:ring-0" name="author">
-                                    </label>',
+                                <input placeholder="' . _e('نام شما', 'cyn-dm') . '" type="text" class="form-control w-full text-base rounded-2xl border border-slate-200 text-slate-400 p-4 focus-visible:border-teal-400 focus:text-zinc-600 transition-all duration-300 focus:ring-0" name="author">
+                            </label>',
 
                 'email' => '<div class="form-group relative order-2">
-                                        <input placeholder="ایمیل شما" type="email" class="form-control w-full text-base rounded-2xl border border-slate-200 text-slate-400 p-4 focus-visible:border-teal-400 focus:text-zinc-600 transition-all duration-300 focus:ring-0" name="email">
-                                    </div>',
+                                <input placeholder="' . _e('ایمیل شما', 'cyn-dm') . '" type="email" class="form-control w-full text-base rounded-2xl border border-slate-200 text-slate-400 p-4 focus-visible:border-teal-400 focus:text-zinc-600 transition-all duration-300 focus:ring-0" name="email">
+                            </div>',
                 'cookies' => '',
             ],
             'comment_field' => '<div class="relative order-3">
-                                    <textarea placeholder="نظر شما" class="form-control resize-none w-full h-[120px] text-base rounded-2xl border border-slate-200 text-slate-400 p-4 focus-visible:border-teal-400 focus:text-zinc-600 transition-all duration-300 focus:ring-0" name="comment"></textarea>
-                                </div>',
+                                <textarea placeholder="' . _e('نظر شما', 'cyn-dm') . '" class="form-control resize-none w-full h-[120px] text-base rounded-2xl border border-slate-200 text-slate-400 p-4 focus-visible:border-teal-400 focus:text-zinc-600 transition-all duration-300 focus:ring-0" name="comment"></textarea>
+                            </div>',
             'comment_notes_before' => '',
             'class_form' => 'flex flex-col gap-4',
             'class_container' => '',
             'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title py-2 hidden">',
             'title_reply_after' => '</h3>',
             'submit_field' => '<div class="grid justify-end order-3">
-            <div class="group form-submit flex items-center gap-2 cursor-pointer">
-                        <svg class="icon rotate-45 object border border-slate-200 size-12 bg-white group-hover:bg-teal-600 rounded-full p-2 group-hover:text-white transition-all duration-300 comment-submit-icon"><use href="#icon-Arrow-17"/></svg>
-                    <div class="text-zinc-600 text-sm cursor-pointer comment-submit-text">%1$s %2$s</div>
-                        </div>
-                     </div>',
+                                <div class="group form-submit flex items-center gap-2 cursor-pointer">
+                                    <svg class="icon rotate-45 object border border-slate-200 size-12 bg-white group-hover:bg-teal-600 rounded-full p-2 group-hover:text-white transition-all duration-300 comment-submit-icon"><use href="#icon-Arrow-17"/></svg>
+                                    <div class="text-zinc-600 text-sm cursor-pointer comment-submit-text">%1$s %2$s</div>
+                                </div>
+                            </div>',
             'class_submit' => 'comment-submit-btn cursor-pointer'
         ]); ?>
     </div>

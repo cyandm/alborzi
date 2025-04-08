@@ -98,8 +98,9 @@ $teamText = get_field('team_text');
                 </svg>
             </span>
             <span>
-                <?php _e('ما نتایج', 'cyn-dm') ?> <span
-                    class="text-teal-600"><?php _e('استثنائی تحویل', 'cyn-dm') ?></span>
+                <?php _e('ما نتایج', 'cyn-dm') ?> <span class="text-teal-600">
+                    <?php _e('استثنائی تحویل', 'cyn-dm') ?>
+                </span>
                 <?php _e('می دهیم!', 'cyn-dm') ?>
             </span>
         </div>

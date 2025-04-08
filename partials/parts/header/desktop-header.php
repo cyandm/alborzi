@@ -16,14 +16,15 @@
             </svg>
         </div> -->
 
-        <?php cyn_get_component('lang-switcher')?>
+        <?php cyn_get_component('lang-switcher') ?>
     </div>
 
     <!-- search -->
     <div class="flex items-center flex-grow">
-        <form class="w-full mx-48 max-lg:mx-4" action="/" method="GET">
+        <form class="w-full mx-48 max-lg:mx-4" action="<?php echo pll_current_language() === 'fa' ? '/' : '/en'?>" method="GET">
             <div class="relative flex items-center">
-                <a href="/?search-type=all&s=">
+                <a
+                    href="/<?php echo pll_current_language() === 'fa' ? '?search-type=all&s=' : 'en/?search-type=all&s='; ?>">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3">
                         <svg class="icon text-zinc-600">
                             <use href="#icon-Search,-Loupe" />
@@ -31,9 +32,9 @@
                     </div>
                 </a>
 
-                <input type="search" id="search" value="<?php the_search_query()?>"
-                    class="block rounded-full w-full py-3 pl-4 pr-9 text-base placeholder:text-zinc-600 text-zinc-600 bg-zinc-100 border border-slate-200"
-                    placeholder="<?php _e('جستجو کن', 'cyn-dm') ?> " name="s" required />
+                <input type="search" id="search" value="<?php the_search_query(); ?>"
+                    class="block rounded-full w-full py-3 ps-9 pe-4 text-base placeholder:text-zinc-600 text-zinc-600 bg-zinc-100 border border-slate-200"
+                    placeholder="<?php _e('جستجو کن', 'cyn-dm'); ?>" name="s" required />
             </div>
         </form>
     </div>

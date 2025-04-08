@@ -6,7 +6,13 @@
     <!-- Title -->
     <section class="text-5xl">
 
-        <?php echo get_post_type_object(CYN_PORTFOLIO_POST_TYPE)->labels->singular_name ?>
+        <?php 
+        if (function_exists('pll_current_language') && pll_current_language() === 'en') {
+            _e('Portfolio', 'cyn-dm'); 
+        } else {
+            echo get_post_type_object(CYN_PORTFOLIO_POST_TYPE)->labels->singular_name;
+        }
+        ?>
 
     </section>
 

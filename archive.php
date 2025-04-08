@@ -26,16 +26,16 @@ $specialPosts = get_posts([
 <section class="space-y-6">
 
 	<!-- Desktop Hero -->
-	<div class="container h-[515px] bg-no-repeat bg-cover bg-center overflow-hidden w-full hidden md:flex justify-end p-5"
-		style="background-image: url('<?php echo esc_url(get_option('blog_img_desktop')); ?>');">
-		<div>
+	<div class="container h-[515px] bg-no-repeat bg-cover bg-center overflow-hidden w-full hidden md:flex <?php echo pll_current_language() === 'fa' ? 'justify-end' : 'justify-start'; ?> p-5"
+		style="background-image: url('<?php echo esc_url(get_option('blog_img_desktop')); ?>'); transform: scaleX(<?php echo pll_current_language() === 'fa' ? '' : '-1'; ?>);">
+		<div style="transform: scaleX(<?php echo pll_current_language() === 'fa' ? '' : '-1'; ?>);">
 			<div class="text-[#A3A3A3] text-7xl w-[550px] leading-[100px] max-md:text-5xl max-md:w-full">
 				<span>
-					<?php echo esc_html(get_option('blog_title_1')); ?>
+					<?php _e('کاوش در جهان با', 'cyn-dm'); ?>
 				</span>
 
 				<span class="text-neutral-800">
-					<?php echo esc_html(get_option('blog_title_2')); ?>
+					<?php _e('مقالات ما', 'cyn-dm'); ?>
 				</span>
 			</div>
 
@@ -65,11 +65,11 @@ $specialPosts = get_posts([
 		<div class="space-y-4">
 			<div class="text-[#A3A3A3] w-[550px] leading-[60px] text-5xl max-md:w-full">
 				<span>
-					<?php echo esc_html(get_option('blog_title_1')); ?>
+					<?php _e('کاوش در جهان با', 'cyn-dm');; ?>
 				</span>
 
 				<span class="text-neutral-800">
-					<?php echo esc_html(get_option('blog_title_2')); ?>
+					<?php _e('مقالات ما', 'cyn-dm'); ?>
 				</span>
 			</div>
 

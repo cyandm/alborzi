@@ -9,7 +9,7 @@ $portfolios = new WP_Query([
 $portfoliosUrl = get_field('portfolios_url');
 ?>
 
-<div class="space-y-6 bg-black mx-0 px-10 py-8 relative"  style="background-image: url(<?php echo CYN_THEME_DIR . '/assets/img/opacity-black-sections.png'?>);">
+<div class="space-y-6 bg-black mx-0 px-4 md:px-10 py-8 relative"  style="background-image: url(<?php echo CYN_THEME_DIR . '/assets/img/opacity-black-sections.png'?>);">
 
     <div class="flex flex-col gap-1">
         <div class="text-neutral-400 text-xl max-md:text-2xl">
@@ -21,7 +21,7 @@ $portfoliosUrl = get_field('portfolios_url');
         </div>
     </div>
 
-    <swiper-container space-between="12" slides-per-view="auto">
+    <swiper-container class="h-[395px]" space-between="12" slides-per-view="auto" pagination="true" pagination-clickable="true">
 
         <?php if ($portfolios->have_posts()): ?>
 

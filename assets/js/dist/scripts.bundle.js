@@ -2908,7 +2908,7 @@
       params,
       slidesEl
     } = swiper;
-    if (!params.loop || swiper.virtual && swiper.params.virtual.enabled) return;
+    if (!params.loop || !slidesEl || swiper.virtual && swiper.params.virtual.enabled) return;
     swiper.recalcSlides();
     const newSlidesOrder = [];
     swiper.slides.forEach((slideEl) => {
@@ -6942,6 +6942,8 @@
       mousePanStart.y = e.clientY;
       image.startX = newX;
       image.startY = newY;
+      image.currentX = newX;
+      image.currentY = newY;
     }
     function zoomIn(e) {
       const zoom = swiper.zoom;
@@ -6999,6 +7001,7 @@
         touchX = image.touchesStart.x;
         touchY = image.touchesStart.y;
       }
+      const prevScale = currentScale;
       const forceZoomRatio = typeof e === "number" ? e : null;
       if (currentScale === 1 && forceZoomRatio) {
         touchX = void 0;
@@ -7024,8 +7027,13 @@
         translateMinY = Math.min(slideHeight / 2 - scaledHeight / 2, 0);
         translateMaxX = -translateMinX;
         translateMaxY = -translateMinY;
-        translateX = diffX * zoom.scale;
-        translateY = diffY * zoom.scale;
+        if (prevScale > 0 && forceZoomRatio && typeof image.currentX === "number" && typeof image.currentY === "number") {
+          translateX = image.currentX * zoom.scale / prevScale;
+          translateY = image.currentY * zoom.scale / prevScale;
+        } else {
+          translateX = diffX * zoom.scale;
+          translateY = diffY * zoom.scale;
+        }
         if (translateX < translateMinX) {
           translateX = translateMinX;
         }
@@ -7046,6 +7054,8 @@
         gesture.originX = 0;
         gesture.originY = 0;
       }
+      image.currentX = translateX;
+      image.currentY = translateY;
       gesture.imageWrapEl.style.transitionDuration = "300ms";
       gesture.imageWrapEl.style.transform = "translate3d(".concat(translateX, "px, ").concat(translateY, "px,0)");
       gesture.imageEl.style.transitionDuration = "300ms";
@@ -7078,6 +7088,8 @@
       }
       zoom.scale = 1;
       currentScale = 1;
+      image.currentX = void 0;
+      image.currentY = void 0;
       image.touchesStart.x = void 0;
       image.touchesStart.y = void 0;
       gesture.imageWrapEl.style.transitionDuration = "300ms";
@@ -8299,6 +8311,10 @@
       initialized = true;
       const SwiperClass = swiper.constructor;
       if (thumbsParams.swiper instanceof SwiperClass) {
+        if (thumbsParams.swiper.destroyed) {
+          initialized = false;
+          return false;
+        }
         swiper.thumbs.swiper = thumbsParams.swiper;
         Object.assign(swiper.thumbs.swiper.originalParams, {
           watchSlidesProgress: true,
@@ -10326,8 +10342,7 @@
     }
     initialize() {
       var _this = this;
-      if (this.initialized) return;
-      this.initialized = true;
+      if (this.swiper && this.swiper.initialized) return;
       const {
         params: swiperParams,
         passedParams
@@ -10358,7 +10373,7 @@
       }));
     }
     connectedCallback() {
-      if (this.initialized && this.nested && this.closest("swiper-slide") && this.closest("swiper-slide").swiperLoopMoveDOM) {
+      if (this.swiper && this.swiper.initialized && this.nested && this.closest("swiper-slide") && this.closest("swiper-slide").swiperLoopMoveDOM) {
         return;
       }
       if (this.init === false || this.getAttribute("init") === "false") {
@@ -10373,7 +10388,6 @@
       if (this.swiper && this.swiper.destroy) {
         this.swiper.destroy();
       }
-      this.initialized = false;
     }
     updateSwiperOnPropChange(propName, propValue) {
       const {
@@ -10399,7 +10413,7 @@
       } : {}));
     }
     attributeChangedCallback(attr, prevValue, newValue) {
-      if (!this.initialized) return;
+      if (!(this.swiper && this.swiper.initialized)) return;
       if (prevValue === "true" && newValue === null) {
         newValue = false;
       }
@@ -10421,7 +10435,7 @@
       set(value) {
         if (!this.passedParams) this.passedParams = {};
         this.passedParams[paramName] = value;
-        if (!this.initialized) return;
+        if (!(this.swiper && this.swiper.initialized)) return;
         this.updateSwiperOnPropChange(paramName, value);
       }
     });
@@ -10480,10 +10494,21 @@
       card.addEventListener("mouseenter", () => {
         const imageUrl = card.querySelector("img").src;
         cursor.style.backgroundImage = "url(".concat(imageUrl, ")");
-        cursor.classList.remove("hidden");
+        cursor.classList.remove("scale-0");
       });
       card.addEventListener("mouseleave", () => {
-        cursor.classList.add("hidden");
+        cursor.classList.add("scale-0");
+      });
+    });
+    const sliders = document.querySelectorAll("swiper-container");
+    sliders.forEach((slider) => {
+      slider.addEventListener("mouseenter", () => {
+        const imageUrl = window.location.origin + "/wp-content/themes/alborzi/assets/img/slider-mouse.png";
+        cursor.style.backgroundImage = "url(".concat(imageUrl, ")");
+        cursor.classList.remove("scale-0");
+      });
+      slider.addEventListener("mouseleave", () => {
+        cursor.classList.add("scale-0");
       });
     });
   });
@@ -16887,8 +16912,8 @@
     i >= 0 && a.splice(i, 1);
   };
   ScrollTrigger2.batch = function(targets, vars) {
-    var result = [], varsCopy = {}, interval = vars.interval || 0.016, batchMax = vars.batchMax || 1e9, proxyCallback = function proxyCallback2(type, callback) {
-      var elements = [], triggers = [], delay = gsap3.delayedCall(interval, function() {
+    var result = [], varsCopy = {}, interval2 = vars.interval || 0.016, batchMax = vars.batchMax || 1e9, proxyCallback = function proxyCallback2(type, callback) {
+      var elements = [], triggers = [], delay = gsap3.delayedCall(interval2, function() {
         callback(elements, triggers);
         elements = [];
         triggers = [];
@@ -17392,6 +17417,21 @@
       });
     });
   });
+
+  // assets/js/modules/preloader.js
+  var images = document.querySelectorAll(".preload-image");
+  var currentIndex = 0;
+  function fadeImages() {
+    images.forEach((img) => img.classList.add("opacity-0"));
+    images[currentIndex].classList.remove("opacity-0");
+    images[currentIndex].classList.add("opacity-100");
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+  var interval = setInterval(fadeImages, 1e3);
+  setTimeout(() => {
+    clearInterval(interval);
+    document.getElementById("preloader").classList.add("hidden");
+  }, 5e3);
 
   // assets/js/pages/contact.js
   function consntactForm() {

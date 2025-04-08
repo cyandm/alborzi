@@ -11,17 +11,17 @@ $portfolioYear = get_field('portfolio_year');
     <div
         class="group flex flex-row hover:bg-neutral-800 p-5 hover:rounded-[20px] justify-between hover:shadow-2xl items-center transition-all duration-300 border-y pb-3 pt-10">
         <!-- Portfolio Year -->
-        <div class="flex-1 text-right md:text-xl text-sm text-zinc-500 group-hover:text-white">
+        <div class="flex-1 text-start md:text-xl text-sm text-zinc-500 group-hover:text-white">
             <?php echo $portfolioYear ?>
         </div>
 
         <!-- Portfolio Location -->
-        <div class="flex-1 text-right min-[768px]:text-center md:text-xl text-sm text-zinc-500 group-hover:text-white">
+        <div class="flex-1 text-start min-[768px]:text-center md:text-xl text-sm text-zinc-500 group-hover:text-white">
             <?php echo $portfolioLocation ?>
         </div>
 
         <!-- Portfolio Name -->
-        <div class="flex-1 text-left md:text-xl text-sm text-zinc-500 group-hover:text-white max-[767px]:hidden">
+        <div class="flex-1 flex justify-end md:text-xl text-sm text-zinc-500 group-hover:text-white max-[767px]:hidden">
             <?php echo the_title(); ?>
         </div>
 

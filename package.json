@@ -1,6 +1,6 @@
 {
   "name": "Alborzi",
-  "version": "1.1.0",
+  "version": "1.7.2",
   "description": "",
   "author": "cyan-dm",
   "scripts": {
@@ -21,14 +21,14 @@
     "zip-build": "^1.8.0"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "caniuse-lite": "^1.0.30001690",
     "esbuild": "^0.23.1",
     "gsap": "^3.12.7",
     "postcss": "^8.5.3",
-    "postcss-cli": "^11.0.0",
+    "postcss-cli": "^11.0.1",
     "sass": "^1.85.1",
-    "swiper": "^11.2.4",
+    "swiper": "^11.2.5",
     "toastify": "^2.0.1",
     "toastify-js": "^1.12.0"
   },

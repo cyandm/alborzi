@@ -7,7 +7,7 @@ $services = new WP_Query([
 
 <div class="bg-black py-8">
 
-    <swiper-container space-between="12" slides-per-view="auto">
+    <swiper-container space-between="12" slides-per-view="auto" pagination="true" pagination-clickable="true">
 
         <?php if ($services->have_posts()): ?>
 
@@ -17,7 +17,7 @@ $services = new WP_Query([
 
                 <swiper-slide>
 
-                    <div class="w-full aspect-video">
+                    <div class="container w-full aspect-video">
 
                         <?php cyn_get_card('front-service'); ?>
 

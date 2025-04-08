@@ -27,7 +27,7 @@
                     class="menu-link flex justify-start items-center gap-2 p-2 text-xl text-slate-400 hover:text-slate-950">
                     <?php echo $menu_item->title ?>
                     <?php if ($menu_item->child_items): ?>
-                        <svg class="menu-icon icon size-4 transition-transform duration-300 rotate-0">
+                        <svg class="menu-icon icon size-4 transition-transform duration-300 <?php echo (get_locale() === 'en_US') ? 'rotate-180' : ''; ?>">
                             <use href="#icon-chevron-left" />
                         </svg>
                     <?php endif; ?>

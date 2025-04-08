@@ -9,3 +9,4 @@ import './price-popUp';
 import './comment';
 import './toastify';
 import './faq';
+import './preloader';
